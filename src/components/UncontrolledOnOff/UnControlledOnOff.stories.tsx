@@ -16,7 +16,6 @@ export const UncontrolledOn = () =>
 export const UncontrolledOff = () =>
     <UncontrolledOnOff defaultOn={false} setOnOffValue={callback}/>
 
-export const DefaultInput = () => <input defaultValue={'hello'}/>
 
 export const ControlledValued = () => {
     const [value, setValue] = useState<boolean>(true)
