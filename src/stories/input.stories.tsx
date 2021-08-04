@@ -43,3 +43,56 @@ export const ControlledInputByButtonPress = () => {
         </div>
     )
 }
+
+export const ControlledInputValue = () => {
+    const [value, setValue] = useState('')
+
+    const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setValue(e.currentTarget.value)
+    }
+
+    return (
+        <div>
+            <input value={value}
+                   onChange={onChange}
+            />
+            -{value}
+        </div>
+    )
+}
+
+export const ControlledCheckBox = () => {
+    const [value, setValue] = useState(true)
+
+    const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setValue(e.currentTarget.checked)
+    }
+
+    return (
+        <div>
+            <input type={'checkbox'}
+                   checked={value}
+                   onChange={onChange}
+            />
+        </div>
+    )
+}
+
+
+export const ControlledSelect = () => {
+    const [value, setValue] = useState<string | undefined>(undefined)
+
+    const onChange = (e: ChangeEvent<HTMLSelectElement>) => {
+        setValue(e.currentTarget.value)
+    }
+
+    return (<div>
+            <select value={value}>
+                <option>none</option>
+                <option value="1">Minsk</option>
+                <option value="2">Moscow</option>
+                <option value="3">Kiev</option>
+            </select>
+        </div>
+    )
+}
