@@ -25,7 +25,7 @@ function App() {
             {/*<OnOff/>
             <UncontrolledAccordion titleValue={'Menu'}/>
             <UncontrolledRating/>*/}
-            <OnOff on={onOffValue} setOnOffValue={() => {
+            <OnOff on={onOffValue} onChange={() => {
                 setOnOffValue(!onOffValue)
             }
             }/>

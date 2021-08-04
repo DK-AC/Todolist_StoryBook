@@ -1,6 +1,6 @@
-type OnOffPropTypes = {
+export type OnOffPropTypes = {
     on: boolean
-    setOnOffValue: (on: boolean) => void
+    onChange: (on: boolean) => void
 }
 
 
@@ -33,10 +33,20 @@ export function OnOff(props: OnOffPropTypes) {
         backgroundColor: props.on ? 'green' : 'red',
     }
 
+    const onStyleHandler = () => props.onChange(true)
+    const offStyleHandler = () => props.onChange(false)
+
+
     return (
         <div>
-            <div style={onStyle} onClick={() => props.setOnOffValue(false)}>On</div>
-            <div style={offStyle} onClick={() => props.setOnOffValue(true)}>Off</div>
+            <div style={onStyle}
+                 onClick={onStyleHandler}>
+                On
+            </div>
+            <div style={offStyle}
+                 onClick={offStyleHandler}>
+                Off
+            </div>
             <div style={indicatorStyle}/>
         </div>
 
