@@ -10,7 +10,7 @@ type RatingPropTypes = {
 export function Rating(props: RatingPropTypes) {
     console.log('Rating rendering')
 
-    const clickStar=props.onClick
+    const clickStar = props.onClick
 
     return (
         <div>
@@ -31,10 +31,14 @@ type StarPropTypes = {
 
 
 function Star(props: StarPropTypes) {
+
+    const starHandler = () => props.onClick(props.value)
+
     console.log('Star rendering')
-    return <span onClick={() => {
-        props.onClick(props.value)
-    }}>{props.selected ? <b>star </b> : 'star '}</span>
+    return <span
+        onClick={starHandler}>
+        {props.selected ? <b>star </b> : 'star '}
+    </span>
 }
 
 

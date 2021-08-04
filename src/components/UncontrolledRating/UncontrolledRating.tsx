@@ -31,14 +31,14 @@ type StarPropTypes = {
 }
 
 
-function Star(props: StarPropTypes) {
+export function Star(props: StarPropTypes) {
     console.log('Star rendering')
 
     const boldStar = () => props.setValue()
 
-    return props.selected ?
-        <span onClick={boldStar}><b>star </b></span> :
-        <span onClick={boldStar}>star </span>
+    return props.selected
+        ? <span onClick={boldStar}><b>star </b></span>
+        : <span onClick={boldStar}>star </span>
 
     /*return <span onClick={boldStar}>{props.selected ? <b>star </b> : 'star '}</span>*/
 
