@@ -3,13 +3,14 @@ import {useState} from "react";
 
 type OnOffPropTypes = {
     setOnOffValue: (on: boolean) => void
+    defaultOn?: boolean
 }
 
 
 export function UncontrolledOnOff(props: OnOffPropTypes) {
     console.log('OnOff rendering')
 
-    let [on, setOn] = useState(false)
+    let [on, setOn] = useState(props.defaultOn ? props.defaultOn : false)
 
     const onStyle = {
         width: "30px",

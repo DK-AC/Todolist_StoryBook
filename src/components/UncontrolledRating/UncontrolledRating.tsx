@@ -1,17 +1,28 @@
 import React, {useState} from "react";
+import {RatingTypes} from "../Rating/Rating";
+
+type UncontrolledRatingPropsType = {
+    defaultRating?: RatingTypes
+    onChange: (value: RatingTypes) => void
+}
 
 
-export function UncontrolledRating() {
+export function UncontrolledRating(props: UncontrolledRatingPropsType) {
 
-    let [value, setValue] = useState(0)
+    let [value, setValue] = useState<RatingTypes>(props.defaultRating ? props.defaultRating : 0)
 
     console.log('Rating rendering')
 
-    let selectedStar1 = () => setValue(1)
-    let selectedStar2 = () => setValue(2)
-    let selectedStar3 = () => setValue(3)
-    let selectedStar4 = () => setValue(4)
-    let selectedStar5 = () => setValue(5)
+    let selectedStar1 = () => setValue(1);
+    props.onChange(1)
+    let selectedStar2 = () => setValue(2);
+    props.onChange(2)
+    let selectedStar3 = () => setValue(3);
+    props.onChange(3)
+    let selectedStar4 = () => setValue(4);
+    props.onChange(4)
+    let selectedStar5 = () => setValue(5);
+    props.onChange(5)
 
     return (
         <div>

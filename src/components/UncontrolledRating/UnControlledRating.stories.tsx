@@ -1,37 +1,32 @@
-import React, {useState} from 'react';
-import {Star} from './UncontrolledRating';
+import React from 'react';
+import {UncontrolledRating} from './UncontrolledRating';
+import {action} from "@storybook/addon-actions";
 
 
 export default {
-    title: 'Star',
-    component: Star,
+    title: 'UncontrolledRating stories',
+    component: UncontrolledRating,
 }
 
-export const EmptyStar = () =>
-    <Star selected={false}
-          setValue={() => {
-          }}/>
+const callback = action('Rating change inside component')
 
-export const BoldStar = () =>
-    <Star selected={true}
-          setValue={() => {
-          }}/>
+export const EmptyUncontrolledRating = () =>
+    <UncontrolledRating defaultRating={0}
+                        onChange={callback}/>
+export const UncontrolledRating1 = () =>
+    <UncontrolledRating defaultRating={1}
+                        onChange={callback}/>
+export const UncontrolledRating2 = () =>
+    <UncontrolledRating defaultRating={2}
+                        onChange={callback}/>
+export const UncontrolledRating3 = () =>
+    <UncontrolledRating defaultRating={3}
+                        onChange={callback}/>
+export const UncontrolledRating4 = () =>
+    <UncontrolledRating defaultRating={4}
+                        onChange={callback}/>
+export const UncontrolledRating5 = () =>
+    <UncontrolledRating defaultRating={5}
+                        onChange={callback}/>
 
-export const StarValue = () => {
 
-    const [value, setValue] = useState<number>(0)
-
-    return (<div>
-            <Star setValue={() => setValue(1)}
-                  selected={value > 0}/>
-            <Star setValue={() => setValue(2)}
-                  selected={value > 1}/>
-            <Star setValue={() => setValue(3)}
-                  selected={value > 2}/>
-            <Star setValue={() => setValue(4)}
-                  selected={value > 3}/>
-            <Star setValue={() => setValue(5)}
-                  selected={value > 4}/>
-        </div>
-    )
-}
