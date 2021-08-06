@@ -11,3 +11,8 @@
     border: 1px solid black;
 }
 
+.item.selected {
+    background-color: darkcyan;
+    color: white;
+}
+

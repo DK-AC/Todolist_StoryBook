@@ -82,9 +82,9 @@ export const ControlledCheckBox = () => {
 export const ControlledSelect = () => {
     const [value, setValue] = useState<string | undefined>(undefined)
 
-    const onChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    /*const onChange = (e: ChangeEvent<HTMLSelectElement>) => {
         setValue(e.currentTarget.value)
-    }
+    }*/
 
     return (<div>
             <select value={value}>
