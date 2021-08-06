@@ -4,6 +4,7 @@ import {RatingTypes} from "./Components/Rating/Rating";
 import {Accordion} from './Components/Accordion/Accordion';
 import {OnOff} from './Components/OnOff/OnOff';
 import {UncontrolledOnOff} from "./Components/UncontrolledOnOff/UncontrolledOnOff";
+import {Select} from "./Components/Select/Select";
 
 
 function App() {
@@ -29,11 +30,16 @@ function App() {
                 setOnOffValue(!onOffValue)
             }
             }/>
-            <Accordion titleValue={'Menu'} collapsed={accordionCollapsed}
+            <Accordion titleValue={'Menu'}
+                       collapsed={accordionCollapsed}
                        setAccordionCollapsed={() => {
                            setAccordionCollapsed(!accordionCollapsed)
-                       }}/>
-            <UncontrolledOnOff  setOnOffValue={setOnOffValue}/>{onOffValue.toString()}
+                       }}
+                       items={[]}
+                       onClick={x => x}
+            />
+            <Select/>
+            <UncontrolledOnOff setOnOffValue={setOnOffValue}/>{onOffValue.toString()}
 
 
         </div>
