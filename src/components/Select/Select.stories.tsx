@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {Select} from "./Select";
 import {action} from "@storybook/addon-actions";
 
@@ -8,11 +8,13 @@ export default {
 }
 
 export const WithValue = () => {
+    const [value, setValue] = useState('2')
+
     return (
         <div>
             <Select
-                onChange={action('value changed')}
-                value={'2'}
+                value={value}
+                onChange={setValue}
                 items={[
                     {value: '1', title: 'Minsk'},
                     {value: '2', title: 'Moscow'},
@@ -23,10 +25,13 @@ export const WithValue = () => {
 }
 
 export const WithoutValue = () => {
+    const [value, setValue] = useState(null)
+
     return (
         <div>
             <Select
-                onChange={action('value changed')}
+                value={value}
+                onChange={setValue}
                 items={[
                     {value: '1', title: 'Minsk'},
                     {value: '2', title: 'Moscow'},
