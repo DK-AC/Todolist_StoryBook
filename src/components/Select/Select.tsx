@@ -6,21 +6,26 @@ type ItemType = {
 }
 
 export type SelectPropTypes = {
-    value: any
-    items: ItemType[]
+    value?: any
     onChange: (value: any) => void
-    children?: React.ReactNode
+    items: ItemType[]
 
 }
 
 
-export const ControlledSelect = (props: SelectPropTypes) => {
+export const Select = (props: SelectPropTypes) => {
 
+    const selectedItem = props.items.find(f => f.value === props.value)
 
     return (
         <div>
-            <div>{}</div>
-            {props.items.map(i => <div>{i.title}</div>)}
+            <select>
+                <option value="">Minsk</option>
+                <option value="">Moscow</option>
+                <option value="">Kiev</option>
+            </select>
+            <h3>{selectedItem && selectedItem.title}</h3>
+            {props.items.map(i => <div key={i.value}>{i.title}</div>)}
         </div>
     )
 }
