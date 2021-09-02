@@ -4,7 +4,6 @@ import {RatingTypes} from "./Components/Rating/Rating";
 import {Accordion} from './Components/Accordion/Accordion';
 import {OnOff} from './Components/OnOff/OnOff';
 import {UncontrolledOnOff} from "./Components/UncontrolledOnOff/UncontrolledOnOff";
-import {Select} from "./Components/Select2withMaterialUI/Select";
 
 
 function App() {
@@ -38,7 +37,6 @@ function App() {
                        items={[]}
                        onClick={x => x}
             />
-            <Select/>
             <UncontrolledOnOff setOnOffValue={setOnOffValue}/>{onOffValue.toString()}
 
 
