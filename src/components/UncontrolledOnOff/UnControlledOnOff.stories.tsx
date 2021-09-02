@@ -10,16 +10,16 @@ export default {
 
 const callback = action('on or off clicked')
 
-export const UncontrolledOn = () =>
-    <UncontrolledOnOff defaultOn={true} setOnOffValue={callback}/>
+export const UncontrolledOn = React.memo(() =>
+    <UncontrolledOnOff defaultOn={true} setOnOffValue={callback}/>)
 
-export const UncontrolledOff = () =>
-    <UncontrolledOnOff defaultOn={false} setOnOffValue={callback}/>
+export const UncontrolledOff = React.memo(() =>
+    <UncontrolledOnOff defaultOn={false} setOnOffValue={callback}/>)
 
 
-export const ControlledValued = () => {
+export const ControlledValued = React.memo(() => {
     const [value, setValue] = useState<boolean>(true)
     return (
         <UncontrolledOnOff setOnOffValue={() => setValue(!value)}/>
     )
-}
+})

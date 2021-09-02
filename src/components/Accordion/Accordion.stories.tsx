@@ -11,7 +11,7 @@ export default {
 const callback = action('Accordion mode change clicked')
 const onClickCallback = action('Some item click')
 
-export const CollapsedMode = () =>
+export const CollapsedMode = React.memo(() =>
     <Accordion
         items={[
             {title: 'Denis', value: 1},
@@ -23,9 +23,9 @@ export const CollapsedMode = () =>
         collapsed={true}
         titleValue={'Hello'}
         setAccordionCollapsed={callback}
-    />
+    />)
 
-export const UnCollapsedMode = () =>
+export const UnCollapsedMode = React.memo(() =>
     <Accordion
         items={[
             {title: 'Denis', value: 1},
@@ -37,9 +37,9 @@ export const UnCollapsedMode = () =>
         collapsed={false}
         titleValue={'GoodBye'}
         setAccordionCollapsed={callback}
-    />
+    />)
 
-export const ModeChange = () => {
+export const ModeChange = React.memo(() => {
     const [value, setValue] = useState<boolean>(true)
     return <Accordion
         items={[
@@ -53,5 +53,5 @@ export const ModeChange = () => {
         collapsed={value}
         setAccordionCollapsed={() => setValue(!value)}
     />
-}
+})
 

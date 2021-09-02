@@ -15,7 +15,7 @@ export type AccordionPropTypes = {
 }
 
 
-export function Accordion(props: AccordionPropTypes) {
+export const Accordion = React.memo((props: AccordionPropTypes) => {
     console.log('Accordion rendering')
     return (
         <div>
@@ -29,7 +29,7 @@ export function Accordion(props: AccordionPropTypes) {
             }
         </div>
     )
-}
+})
 
 type AccordionTitlePropTypes = {
     title: string
@@ -37,7 +37,7 @@ type AccordionTitlePropTypes = {
 }
 
 
-function AccordionTitle(props: AccordionTitlePropTypes) {
+const AccordionTitle = React.memo((props: AccordionTitlePropTypes) => {
 
     const accordionChangeHandler = () => props.setAccordionCollapsed()
 
@@ -45,7 +45,7 @@ function AccordionTitle(props: AccordionTitlePropTypes) {
     return (
         <h3 onClick={accordionChangeHandler}> --{props.title}-- </h3>
     )
-}
+})
 
 export type AccordionBodyPropTypes = {
     items: ItemType[]
@@ -53,7 +53,7 @@ export type AccordionBodyPropTypes = {
 
 }
 
-function AccordionBody(props: AccordionBodyPropTypes) {
+const AccordionBody = React.memo((props: AccordionBodyPropTypes) => {
     console.log('AccordionBody rendering')
     return (
         <div>
@@ -67,6 +67,6 @@ function AccordionBody(props: AccordionBodyPropTypes) {
             </ul>
         </div>
     )
-}
+})
 
 

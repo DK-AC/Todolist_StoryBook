@@ -7,7 +7,7 @@ export default {
     component: Select,
 }
 
-export const WithValue = () => {
+export const WithValue = React.memo(() => {
     const [value, setValue] = useState('2')
 
     return (
@@ -22,9 +22,9 @@ export const WithValue = () => {
                 ]}/>
         </div>
     )
-}
+})
 
-export const WithoutValue = () => {
+export const WithoutValue = React.memo(() => {
     const [value, setValue] = useState(null)
 
     return (
@@ -39,7 +39,7 @@ export const WithoutValue = () => {
                 ]}/>
         </div>
     )
-}
+})
 
 
 

@@ -7,7 +7,7 @@ export default {
     component: UncontrolledAccordion,
 }
 
-export const UncontrolledAccordionMenu = () => {
+export const UncontrolledAccordionMenu = React.memo(() => {
     return (
         <UncontrolledAccordion titleValue={'Menu'}/>)
-}
+})
