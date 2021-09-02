@@ -10,11 +10,11 @@ export default {
 
 const callback = action('on or off clicked')
 
-export const OnMode = React.memo(() => <OnOff on={true} onChange={callback}/>)
-export const OffMode = React.memo(() => <OnOff on={false} onChange={callback}/>)
+export const OnMode = () => <OnOff on={true} onChange={callback}/>
+export const OffMode = () => <OnOff on={false} onChange={callback}/>
 
-export const ModeChange = React.memo(() => {
+export const ModeChange = () => {
     const [value, setValue] = useState<boolean>(true)
     return <OnOff on={value} onChange={setValue}/>
-})
+}
 

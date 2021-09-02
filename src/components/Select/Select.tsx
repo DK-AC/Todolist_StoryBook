@@ -2,7 +2,7 @@ import React, {useState, KeyboardEvent, useEffect} from "react";
 import styles from './Select.module.css'
 import {log} from "util";
 
-type ItemType = {
+export type ItemType = {
     title: string
     value: any
 }
@@ -15,7 +15,7 @@ export type SelectPropTypes = {
 }
 
 
-export const Select = React.memo((props: SelectPropTypes) => {
+export const Select = (props: SelectPropTypes) => {
 
     const [active, setActive] = useState(false)
     const [hoverElement, setHoverElement] = useState(props.value)
@@ -86,4 +86,4 @@ export const Select = React.memo((props: SelectPropTypes) => {
             </div>
         </div>
     )
-})
+}

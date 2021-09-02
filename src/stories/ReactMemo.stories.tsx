@@ -22,7 +22,7 @@ export const UsersSecret = (props: { users: Array<string> }) => {
 const Users = React.memo(UsersSecret)
 
 
-export const Example = React.memo(() => {
+export const Example = () => {
 
     const [counter, setCounter] = useState(0)
     const [users, setUsers] = useState(['Denis', 'Dima', 'Liudmila', 'Jenya'])
@@ -34,6 +34,7 @@ export const Example = React.memo(() => {
     }
 
 
+
     return (
         <div>
             <button onClick={countHandler}>+</button>
@@ -42,4 +43,4 @@ export const Example = React.memo(() => {
             <Users users={users}/>
         </div>
     )
-})
+}

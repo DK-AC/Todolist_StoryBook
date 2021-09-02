@@ -13,11 +13,13 @@ export type SelectPropTypes = {
 }
 
 
-export const ControlledSelect = React.memo((props: SelectPropTypes) => {
+export const ControlledSelect = (props: SelectPropTypes) => {
+
+
     return (
         <div>
             <div>{}</div>
             {props.items.map(i => <div>{i.title}</div>)}
         </div>
     )
-})
+}

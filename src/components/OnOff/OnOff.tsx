@@ -1,12 +1,10 @@
-import React from "react";
-
 export type OnOffPropTypes = {
     on: boolean
     onChange: (on: boolean) => void
 }
 
 
-export const OnOff = React.memo((props: OnOffPropTypes) => {
+export function OnOff(props: OnOffPropTypes) {
 
     const onStyle = {
         width: "30px",
@@ -54,4 +52,4 @@ export const OnOff = React.memo((props: OnOffPropTypes) => {
 
     )
 
-})
+}

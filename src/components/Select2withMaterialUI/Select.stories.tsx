@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-export const NativeSelects = React.memo(() => {
+export function NativeSelects() {
     const classes = useStyles();
     const [state, setState] = React.useState<{ age: string | number; name: string }>({
         age: '',
@@ -59,4 +59,4 @@ export const NativeSelects = React.memo(() => {
             </FormControl>
         </div>
     );
-})
+}

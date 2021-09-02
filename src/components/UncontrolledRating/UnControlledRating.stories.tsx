@@ -10,23 +10,23 @@ export default {
 
 const callback = action('Rating change inside component')
 
-export const EmptyUncontrolledRating = React.memo( () =>
+export const EmptyUncontrolledRating = () =>
     <UncontrolledRating defaultRating={0}
-                        onChange={callback}/>)
-export const UncontrolledRating1 = React.memo( () =>
+                        onChange={callback}/>
+export const UncontrolledRating1 = () =>
     <UncontrolledRating defaultRating={1}
-                        onChange={callback}/>)
-export const UncontrolledRating2 = React.memo( () =>
+                        onChange={callback}/>
+export const UncontrolledRating2 = () =>
     <UncontrolledRating defaultRating={2}
-                        onChange={callback}/>)
-export const UncontrolledRating3 = React.memo( () =>
+                        onChange={callback}/>
+export const UncontrolledRating3 = () =>
     <UncontrolledRating defaultRating={3}
-                        onChange={callback}/>)
-export const UncontrolledRating4 = React.memo( () =>
+                        onChange={callback}/>
+export const UncontrolledRating4 = () =>
     <UncontrolledRating defaultRating={4}
-                        onChange={callback}/>)
-export const UncontrolledRating5 = React.memo( () =>
+                        onChange={callback}/>
+export const UncontrolledRating5 = () =>
     <UncontrolledRating defaultRating={5}
-                        onChange={callback}/>)
+                        onChange={callback}/>
 
 
